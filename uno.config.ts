@@ -9,12 +9,12 @@ import { THEME_CONFIG } from "./src/theme.config";
 
 const {socials, themeStyle} = THEME_CONFIG;
 
-let foreground = "#2e405b";
-let background = "#ffffff";
+let foreground = "#3A4750";
+let background = "#FEFAF6";
 
 if(THEME_CONFIG.themeStyle === 'dark') {
-  foreground = "#ffffff";
-  background = "#2e405b";
+  foreground = "#F8F8F8";
+  background = "#3A4750";
 }
 
 export default defineConfig({
@@ -34,7 +34,7 @@ export default defineConfig({
       background
     },
     fontFamily: {
-      sans: '"Source Sans Pro","Roboto","Helvetica","Helvetica Neue","Source Han Sans SC","Source Han Sans TC","PingFang SC","PingFang HK","PingFang TC",sans-serif',
+      sans: '"Source Sans Pro","Roboto", "Noto Sans TC", "Helvetica","Helvetica Neue","Source Han Sans SC","Source Han Sans TC","PingFang SC","PingFang HK","PingFang TC",sans-serif',
       serif: '"HiraMinProN-W6","Source Han Serif CN","Source Han Serif SC","Source Han Serif TC",serif',
     },
     animation: {

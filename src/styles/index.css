@@ -2,7 +2,7 @@ body {
   --uno: antialiased;
   color: theme("colors.foreground");
   background-color: theme("colors.background");
-  font-family: theme("fontFamily.sans");
+  font-family: theme("fontFamily.sans") !important;
   line-height: normal;
   text-align: left;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
@@ -92,9 +92,69 @@ article.heti blockquote {
   padding: 2px 16px;
   margin: 24px 0;
   border-left: 4px solid #eee;
+  color: #6B728E;
 }
 
 article.heti blockquote p {
   margin-block-start: 12px;
   margin-block-end: 12px;
 }
+
+/* Custom CSS */
+.callout-note {
+  background-color: rgba(79, 167, 218, .14);
+}
+
+/* .callout {
+  padding: 1rem;
+  border-inline-start: 0.25rem solid var(--sl-color-asides-border);
+  color: var(--sl-color-white);
+}
+
+.callout--note {
+  --sl-color-asides-text-accent: var(--sl-color-blue-high);
+  --sl-color-asides-border: var(--sl-color-blue);
+  background-color: var(--sl-color-blue-low);
+}
+
+.callout--tip {
+  --sl-color-asides-text-accent: var(--sl-color-purple-high);
+  --sl-color-asides-border: var(--sl-color-purple);
+  background-color: var(--sl-color-purple-low);
+}
+
+.callout--caution {
+  --sl-color-asides-text-accent: var(--sl-color-orange-high);
+  --sl-color-asides-border: var(--sl-color-orange);
+  background-color: var(--sl-color-orange-low);
+}
+
+.callout--danger {
+  --sl-color-asides-text-accent: var(--sl-color-red-high);
+  --sl-color-asides-border: var(--sl-color-red);
+  background-color: var(--sl-color-red-low);
+}
+
+.callout__title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: var(--sl-text-h5);
+  font-weight: 600;
+  line-height: var(--sl-line-height-headings);
+  color: var(--sl-color-asides-text-accent);
+}
+
+.callout__icon {
+  font-size: 1.333em;
+  width: 1em;
+  height: 1em;
+}
+
+.callout__title+.callout__content {
+  margin-top: 0.5rem;
+} */
+
+/* .callout__content a {
+  color: var(--sl-color-asides-text-accent);
+} */

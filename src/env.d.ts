@@ -35,38 +35,38 @@ declare namespace App {
         path: string;
       }>,
       /** comments */
-      comments?: {
-        disqus?: Disqus,
-        giscus?: Giscus,
-        twikoo?: Twikoo
-      }
+      // comments?: {
+      //   disqus?: Disqus,
+      //   giscus?: Giscus,
+      //   twikoo?: Twikoo
+      // }
     }
     translate: (key: string, param?: string | number) => string;
   }
 }
 
-interface Twikoo {
-  envId: string;
-  region?: string;
-  lang?: string;
-}
+// interface Twikoo {
+//   envId: string;
+//   region?: string;
+//   lang?: string;
+// }
 
-interface Disqus {
-  shortname: string;
-}
+// interface Disqus {
+//   shortname: string;
+// }
 
-interface Giscus {
-  repo: import('giscus').Repo;
-  repoId?: string;
-  category?: string;
-  categoryId?: string;
-  mapping?: import('giscus').Mapping;
-  term?: string;
-  strict: import('giscus').BooleanString;
-  reactionsEnabled: import('giscus').BooleanString;
-  emitMetadata: import('giscus').BooleanString;
-  inputPosition: import('giscus').InputPosition;
-  theme: import('giscus').Theme;
-  lang: import('giscus').AvailableLanguage;
-  loading: import('giscus').Loading;
-}
+// interface Giscus {
+//   repo: import('giscus').Repo;
+//   repoId?: string;
+//   category?: string;
+//   categoryId?: string;
+//   mapping?: import('giscus').Mapping;
+//   term?: string;
+//   strict: import('giscus').BooleanString;
+//   reactionsEnabled: import('giscus').BooleanString;
+//   emitMetadata: import('giscus').BooleanString;
+//   inputPosition: import('giscus').InputPosition;
+//   theme: import('giscus').Theme;
+//   lang: import('giscus').AvailableLanguage;
+//   loading: import('giscus').Loading;
+// }
