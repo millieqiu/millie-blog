@@ -57,9 +57,9 @@ btn.addEventListener('click', greet);
 
 在上述的程式碼中，`addEventListener` 接收了 `greet` 函式作為參數，由此可知它就是所謂的**高階函式**；而 `greet` 函式則是我們後續會提到的 **回呼函式**（Callback Function）。
 
-:::tip
-所謂的「Callback function」其實就是「把函式當作另一個函式（Higher-order Function）的參數，透過另一個函式來呼叫它」。
-:::
+> 💡 **提示**
+>
+> 所謂的「Callback function」其實就是「把函式當作另一個函式（Higher-order Function）的參數，透過另一個函式來呼叫它」。
 
 第二種情況的範例程式碼如下：
 
@@ -123,9 +123,9 @@ transformer('JavaScript is the best!', upperFirstWord);
 
 2. **幫助我們實現「物件抽象化」（Abstraction）**。
 
-:::tip
-抽象化（Abstraction）是物件導向程式設計（Object-Oriented Programming）的重要概念之一。簡單來說，指的是當程式執行時，能夠隱藏另一部分程式碼背後的運作的細節。
-:::
+> 💡 **提示**
+>
+> 抽象化（Abstraction）是物件導向程式設計（Object-Oriented Programming）的重要概念之一。簡單來說，指的是當程式執行時，能夠隱藏另一部分程式碼背後的運作的細節。
 
 以上方的範例來看，`tranformer()` 函式在運作時，需要關注的事情就只有「能否順利將 input 中字串轉換成我們需要的格式」，因此並不在乎背後複雜的機制是如何將字串轉換成大寫的。
 

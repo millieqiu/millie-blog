@@ -91,9 +91,9 @@ console.log(`${output.padEnd(20, '')}${'✅'.repeat(i + 1)}`);
 //calculateAge          ✅✅✅
 ```
 
-:::tip[解說：]
-在 output 的長度達到 20 以前，會不斷填充空白字元，如此一來最後 `output.lenght` 的結果皆會等於 20。（與之相對應的也有 `padStart` 方法，將重複的字符填充在最前面，可以到 [MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) 網站上看更詳細的說明。）
-:::
+> 📝 **備註**
+>
+> 在 output 的長度達到 20 以前，會不斷填充空白字元，如此一來最後 `output.lenght` 的結果皆會等於 20。（與之相對應的也有 `padStart` 方法，將重複的字符填充在最前面，可以到 [MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/padStart) 網站上看更詳細的說明。）
 
 再利用 `repeat()` 方法重複印出 ✅ Emoji，就大功告成囉～ 完整的程式碼如下：
 
