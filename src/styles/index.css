@@ -101,60 +101,12 @@ article.heti blockquote p {
 }
 
 /* Custom CSS */
-.callout-note {
-  background-color: rgba(79, 167, 218, .14);
+.heti mark {
+  background-color: #FDE49E !important;
 }
 
-/* .callout {
-  padding: 1rem;
-  border-inline-start: 0.25rem solid var(--sl-color-asides-border);
-  color: var(--sl-color-white);
+@media(prefers-color-scheme: dark) {
+  .heti mark {
+    background-color: #d2b25a !important;
+  }
 }
-
-.callout--note {
-  --sl-color-asides-text-accent: var(--sl-color-blue-high);
-  --sl-color-asides-border: var(--sl-color-blue);
-  background-color: var(--sl-color-blue-low);
-}
-
-.callout--tip {
-  --sl-color-asides-text-accent: var(--sl-color-purple-high);
-  --sl-color-asides-border: var(--sl-color-purple);
-  background-color: var(--sl-color-purple-low);
-}
-
-.callout--caution {
-  --sl-color-asides-text-accent: var(--sl-color-orange-high);
-  --sl-color-asides-border: var(--sl-color-orange);
-  background-color: var(--sl-color-orange-low);
-}
-
-.callout--danger {
-  --sl-color-asides-text-accent: var(--sl-color-red-high);
-  --sl-color-asides-border: var(--sl-color-red);
-  background-color: var(--sl-color-red-low);
-}
-
-.callout__title {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-size: var(--sl-text-h5);
-  font-weight: 600;
-  line-height: var(--sl-line-height-headings);
-  color: var(--sl-color-asides-text-accent);
-}
-
-.callout__icon {
-  font-size: 1.333em;
-  width: 1em;
-  height: 1em;
-}
-
-.callout__title+.callout__content {
-  margin-top: 0.5rem;
-} */
-
-/* .callout__content a {
-  color: var(--sl-color-asides-text-accent);
-} */

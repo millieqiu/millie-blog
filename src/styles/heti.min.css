@@ -561,7 +561,7 @@
 
 @media(prefers-color-scheme: dark) {
   .heti mark {
-    background-color: rgba(95, 91, 0, 0.88)
+    background-color: #c1a65b
   }
 }
 
