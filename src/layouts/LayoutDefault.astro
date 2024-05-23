@@ -33,7 +33,7 @@ const optimizedImage = new URL(
 ).toString();
 ---
 
-<html lang="en">
+<html lang="zh-Hant-TW">
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -68,6 +68,17 @@ const optimizedImage = new URL(
         },
       }}
     />
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3L69WG49DJ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3L69WG49DJ");
+    </script>
   </head>
   <body>
     <div
