@@ -4,6 +4,7 @@ import { THEME_CONFIG } from "./src/theme.config";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,15 +14,12 @@ export default defineConfig({
     shikiConfig: {
       theme: 'ayu-dark',
       langs: [],
-      wrap: true,
-    },
+      wrap: true
+    }
   },
-  integrations: [
-    UnoCSS({
-      injectReset: true
-    }),
-    robotsTxt(),
-    sitemap(),
-    mdx()
-  ]
+  integrations: [UnoCSS({
+    injectReset: true
+  }), robotsTxt(), sitemap(), mdx()],
+  output: "server",
+  adapter: vercel()
 });
