@@ -8,7 +8,7 @@ categories: ['生活']
 # draft: false
 ---
 
-![coffee macho](/src/images/cafe-macho.png)
+![coffee macho](./cafe-macho.png)
 
 原本早上看天氣預報，很猶豫到底要不要出門，怕路上遇到大雨會很麻煩，但想了想禮拜六已經待在家一整天了，決定還是出門走走（畢竟我是個連續兩天待在家裡就會發霉的人）。
 

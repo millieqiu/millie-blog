@@ -133,7 +133,7 @@ transformer('JavaScript is the best!', upperFirstWord);
 
 不過需要注意的是，若 Callback function 的設計及使用不當，讓函式之間的相依過深，callback 多層之後產生的「波動拳」就會難以維護，形成所謂的「Callback hell」。
 
-![Callback Hell Image](/src/images/callback-hell.jpeg)
+![Callback Hell Image](./callback-hell.jpeg)
 
 可以說 Callback function 會是 JS 課程中數一數二重要的單元，老師在章節的末尾千交代萬囑咐一定要好好釐清當中的觀念，也是我這次覺得提筆做筆記的原因～✏
 

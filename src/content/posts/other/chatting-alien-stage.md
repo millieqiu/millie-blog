@@ -34,11 +34,11 @@ categories: ['閒聊']
 
 世界民會透過金錢交易來購買寵物人、送寵物人到專門培育音樂創作及歌唱技巧的才藝補習班。
 
-![image](/src/images/alien-stage-1.png)
+![image](./alien-stage-1.png)
 
 長大後就會被派去參加「Alien Stage」，也就是本次企劃的核心。名義上是像演唱會一樣的音樂選秀節目，採 1v1 的PK 賽制，可以看出現場是如此的熱鬧非凡 👇
 
-![image](/src/images/alien-stage-2.png)
+![image](./alien-stage-2.png)
 
 除了贏的那方可以晉級，更殘酷的是輸的那方就會猶如被**宣判死刑**，在舞台上當場處死！簡直就只是外星人看人類之間的互相競爭及的殺戮娛樂秀啊 😭
 
@@ -48,11 +48,11 @@ categories: ['閒聊']
 
 附上一張官方前幾天才更新、熱騰騰的參賽人員個人檔案：
 
-![image](/src/images/alien-stage-3.png)
+![image](./alien-stage-3.png)
 
 不管你是喜歡 GL、BL 還是 BG，滿滿的 CP 在外星人舞台上通通都找得到！（只能說貴圈真亂啊，但我還是吃得很香）
 
-![image](/src/images/alien-stage-4.png)
+![image](./alien-stage-4.png)
 
 角色之間幾乎沒有台詞對白，劇情都是透過歌曲的 MV 來呈現，全部看完花不到 30 分鐘，但後勁大概可以持續 30 天。
 
