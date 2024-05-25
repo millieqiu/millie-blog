@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="zh-Hant-TW"> <head><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.8.7"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"><title>Daily Notes 1：String in Modern JS</title><meta charset="utf-8"><link rel="canonical" href="https://my-attic-millieqiuuuu.vercel.app/posts/tech/frontend-daily-note-1/"><meta name="description" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><meta name="robots" content="index, follow"><meta property="og:title" content="Daily Notes 1：String in Modern JS"><meta property="og:type" content="article"><meta property="og:image" content="https://my-attic-millieqiuuuu.vercel.app/OpenGraph-img.png"><meta property="og:url" content="https://my-attic-millieqiuuuu.vercel.app/"><link rel="icon" href="/favicon.png" type="image/svg+xml"><meta name="twitter:image:src" content="https://my-attic-millieqiuuuu.vercel.app/OpenGraph-img.png"><meta name="twitter:image:alt" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><meta name="twitter:creator" content="@Mi11ieeeHowdy"><meta name="twitter:site" content="@Mi11ieeeHowdy"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Daily Notes 1：String in Modern JS"><meta name="twitter:description" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-3L69WG49DJ"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3L69WG49DJ");
+    </script><link rel="stylesheet" href="/_astro/about.NoyNny2r.css">
+<style>.code-container{position:relative}.clipboard-copy{position:absolute;top:.5rem;right:.5rem;width:1.75rem;height:1.75rem;display:flex;justify-content:center;align-items:center;border-radius:.25rem}.clipboard-copy:hover{background-color:#30363d}
+</style><script type="module">function u(e){const t=document.createElement("pre");return t.style.width="1px",t.style.height="1px",t.style.position="fixed",t.style.top="5px",t.textContent=e,t}function s(e){if("clipboard"in navigator)return navigator.clipboard.writeText(e.textContent||"");const t=getSelection();if(t==null)return Promise.reject(new Error);t.removeAllRanges();const n=document.createRange();return n.selectNodeContents(e),t.addRange(n),document.execCommand("copy"),t.removeAllRanges(),Promise.resolve()}function i(e){if("clipboard"in navigator)return navigator.clipboard.writeText(e);const t=document.body;if(!t)return Promise.reject(new Error);const n=u(e);return t.appendChild(n),s(n),t.removeChild(n),Promise.resolve()}async function d(e){const t=e.getAttribute("for"),n=e.getAttribute("value");function o(){e.dispatchEvent(new CustomEvent("clipboard-copy",{bubbles:!0}))}if(e.getAttribute("aria-disabled")!=="true"){if(n)await i(n),o();else if(t){const r="getRootNode"in Element.prototype?e.getRootNode():e.ownerDocument;if(!(r instanceof Document||"ShadowRoot"in window&&r instanceof ShadowRoot))return;const c=r.getElementById(t);c&&(await p(c),o())}}}function p(e){return e instanceof HTMLInputElement||e instanceof HTMLTextAreaElement?i(e.value):e instanceof HTMLAnchorElement&&e.hasAttribute("href")?i(e.href):s(e)}function f(e){const t=e.currentTarget;t instanceof HTMLElement&&d(t)}function l(e){if(e.key===" "||e.key==="Enter"){const t=e.currentTarget;t instanceof HTMLElement&&(e.preventDefault(),d(t))}}function m(e){e.currentTarget.addEventListener("keydown",l)}function y(e){e.currentTarget.removeEventListener("keydown",l)}class h extends HTMLElement{static define(t="clipboard-copy",n=customElements){return n.define(t,this),this}constructor(){super(),this.addEventListener("click",f),this.addEventListener("focus",m),this.addEventListener("blur",y)}connectedCallback(){this.hasAttribute("tabindex")||this.setAttribute("tabindex","0"),this.hasAttribute("role")||this.setAttribute("role","button")}get value(){return this.getAttribute("value")||""}set value(t){this.setAttribute("value",t)}}const a=typeof globalThis<"u"?globalThis:window;try{a.ClipboardCopyElement=h.define()}catch(e){if(!(a.DOMException&&e instanceof DOMException&&e.name==="NotSupportedError")&&!(e instanceof ReferenceError))throw e}document.addEventListener("clipboard-copy",function(e){const n=e.target.querySelector(".icon");n.classList.replace("i-mdi-content-copy","i-mdi-check"),setTimeout(()=>{n.classList.replace("i-mdi-check","i-mdi-content-copy")},1500)});const b=Array.from(document.querySelectorAll("pre")),g="<div class='i-mdi-content-copy icon text-white'></div>";for(let e of b){let t=document.createElement("div");t.className="code-container";let n=document.createElement("clipboard-copy"),o=e.querySelector("code");n.value=o?.innerText??"",n.className="clipboard-copy",n.innerHTML=g,e.appendChild(n),e.parentNode?.insertBefore(t,e),t.appendChild(e)}
+</script>
+<script type="module" src="/_astro/page.DFwqf4PB.js"></script></head> <body> <div un-max-lg="animate-fadein-down" un-lg="flex flex-row-reverse justify-between gap-4 px-8 mx-auto max-w-6xl" class="container contain-layout m-a"> <div un-lg="sticky top-0 h-screen py-20 animate-fadein-left gap-8" un-lg:flex="~ col justify-between items-start gap-4" class="p-7.5"> <header un-lg="grow-1 justify-between items-start" un-flex="~ col gap-2.5" class="text-center"> <hgroup un-hover:lg="bg-foreground color-background pt-3.75 pb-8.75 " un-lg=" write-vertical-right items-start px-2.5 pb-12 b-l-2px b-l-foreground-solid text-left" un-flex="~ col gap-2.5" class="cursor-pointer transition-[padding,background] duration-800 ease-in-out"> <a class="normal" href="/"> <h3 class="text-5 font-extrabold font-serif">Millie Qiu</h3> <h1 class="text-8 font-extrabold font-serif">Millie&#39;s Attic</h1> </a> </hgroup> <nav class="text-center font-bold" un-flex="~ col gap-2"> <ul un-lg="flex-col items-start text-4" class="text-3.5" un-flex="~ row gap-2 justify-center"> <li> <a href="/posts/page/1">Posts</a> </li><li> <a href="/archive">Archive</a> </li><li> <a href="/categories">Categories</a> </li><li> <a href="/about">About</a> </li> </ul> <ul un-flex="~ row gap-1 justify-center"> <li> <a href="https://github.com/millieqiu" target="_blank" title="github" class="icon i-mdi-github"></a> </li><li> <a href="https://x.com/Mi11ieeeHowdy" target="_blank" title="twitter" class="icon i-mdi-twitter"></a> </li> </ul> </nav> </header> <footer font-bold text-3 un-flex="~ col gap-1" un-lg="gap-3.5" class="max-lg:hidden"> <p>
+© 2024 <a target="_blank" href="https://my-attic-millieqiuuuu.vercel.app/" rel="noopener noreferrer">Millie Qiu</a> </p> <p>
+Theme
+<a target="_blank" href="https://github.com/Moeyua/astro-theme-typography" rel="noopener noreferrer">Typography</a>
+by <a target="_blank" href="https://moeyua.com" rel="noopener noreferrer">Moeyua</a> </p> <p>
+Proudly published with
+<a target="_blank" href="https://astro.build" rel="noopener noreferrer">Astro</a> </p> </footer> </div> <main un-lg="py-20 min-w-xl animate-fadein-down" class="p-7.5">  <article class="heti"> <header> <h1 class="post-title!"> <a href="/posts/tech/frontend-daily-note-1/">Daily Notes 1：String in Modern JS</a> </h1> <div class="mt-2 text-3.5"> <span>發佈於</span> <time>2024-03-03</time> <a class="ml-2.5" href="/categories/Frontend">
+# Frontend </a><a class="ml-2.5" href="/categories/JavaScript">
+# JavaScript </a> </div> </header>  <p>我目前加強 JavaScript 基礎的方式是 Udemy 上一堂由 Jonas Schmedtmann 老師開授的 <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2023: From Zero to Expert!</a>。</p>
+<p>當時有趁著打折購入這門課，真的覺得很超值，老師將觀念講解得很詳細，對於課程編排（例如哪個部份應該先上、哪個部份的觀念要留到後面的章節再詳細補強）也有一套自己的原則，更新教學內容也很頻繁，因此不用擔心觀念落後的問題，我個人上得蠻開心的 XD</p>
+<p>推薦給對自己的英文能力有信心、不會聽到睡著，或想嘗試看看全英語授課的朋友囉～🙌</p>
+<hr>
+<h2 id="題目說明">題目說明</h2>
+<p>今天做了一份老師在章節中穿插的 Coding Challenge，題目是將底下的格式的字串轉換成小駝峰 (low camel case) 格式，加上 ✅ Emoji，並移除每一列中不必要的空白字元：</p>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>USer_nAme</span></span>
+<span class="line"><span>Some_Variable</span></span>
+<span class="line"><span>  calculate_AGE</span></span>
+<span class="line"><span>----------------------</span></span>
+<span class="line"><span>// 轉換成</span></span>
+<span class="line"><span>userName       ✅</span></span>
+<span class="line"><span>someVariables  ✅✅</span></span>
+<span class="line"><span>calculateAge   ✅✅✅</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>這份練習的目的是為了讓我們更熟練運用 String Methods，來看一下這題的解法以及我學到的東西。</p>
+<h2 id="解題方法">解題方法</h2>
+<ol>
+<li>將整段字串依題目要求貼到 Textarea 裡，再分別取出每一列的內容，因此需要認識換行符號 <code>\n</code> 及 <code>split()</code> 方法。</li>
+</ol>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF8F40">const</span><span style="color:#BFBDB6"> text </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> document</span><span style="color:#F29668">.</span><span style="color:#FFB454">querySelector</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'textarea'</span><span style="color:#BFBDB6">)</span><span style="color:#F29668">.</span><span style="color:#BFBDB6">value</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#FF8F40">const</span><span style="color:#BFBDB6"> rows </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> text</span><span style="color:#F29668">.</span><span style="color:#FFB454">split</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'</span><span style="color:#95E6CB">\n</span><span style="color:#AAD94C">'</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(rows)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// ['USer_nAme', 'Some_Variable', '  calculate_AGE']</span></span>
+<span class="line"></span></code></pre>
+<p><code>split()</code> 的基本語法：</p>
+<p><code>str.split([separator[, limit]])</code></p>
+<ul>
+<li>
+<p>split() 結果返回一個<strong>字串陣列</strong></p>
+</li>
+<li>
+<p>參數 limit 是非必要的，表示最多返回幾個分隔字串</p>
+</li>
+<li>
+<p>seperator 參數用來指定分隔符號</p>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>利用 <code>for..of</code> loop 讀取陣列中的每個元素，再透過 <code>toLowerCase()</code>、<code>trim()</code> 等方法整理格式。</p>
+<p>當收到字串型態的資料時，通常會先透過 <code>toLowerCase</code> 將之轉換成小寫，能夠方便我們進行後續的整理；而 <code>trim()</code> 方法能夠幫助我們移除字串中不必要的空白字元。</p>
+<p>到這個步驟為止，我們已經能成功將 Textarea 中的原始資料轉換成小駝峰格式了🎉！</p>
+</li>
+</ol>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF8F40">for</span><span style="color:#BFBDB6"> (</span><span style="color:#FF8F40">const</span><span style="color:#BFBDB6"> [i</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> row] </span><span style="color:#F29668">of</span><span style="color:#BFBDB6"> rows</span><span style="color:#F29668">.</span><span style="color:#FFB454">entries</span><span style="color:#BFBDB6">()) {</span></span>
+<span class="line"><span style="color:#FF8F40">    const</span><span style="color:#BFBDB6"> [first</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> second] </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> row</span><span style="color:#F29668">.</span><span style="color:#FFB454">toLowerCase</span><span style="color:#BFBDB6">()</span><span style="color:#F29668">.</span><span style="color:#FFB454">trim</span><span style="color:#BFBDB6">()</span><span style="color:#F29668">.</span><span style="color:#FFB454">split</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'_'</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span><span style="color:#ACB6BF8C;font-style:italic"> //解構賦值</span></span>
+<span class="line"><span style="color:#BFBDB6">    </span></span>
+<span class="line"><span style="color:#FF8F40">    const</span><span style="color:#BFBDB6"> output </span><span style="color:#F29668">=</span><span style="color:#AAD94C"> `</span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">first</span><span style="color:#FF8F40">}${</span><span style="color:#BFBDB6">second</span><span style="color:#F29668">.</span><span style="color:#FFB454">replace</span><span style="color:#BFBDB6">(</span></span>
+<span class="line"><span style="color:#BFBDB6">      second[</span><span style="color:#D2A6FF">0</span><span style="color:#BFBDB6">]</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> </span></span>
+<span class="line"><span style="color:#BFBDB6">      second[</span><span style="color:#D2A6FF">0</span><span style="color:#BFBDB6">]</span><span style="color:#F29668">.</span><span style="color:#FFB454">toUpperCase</span><span style="color:#BFBDB6">()</span></span>
+<span class="line"><span style="color:#BFBDB6">      )</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#BFBDB6">      console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(output)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">  }</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// userName</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// someVariable</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// calculateAge</span></span>
+<span class="line"></span></code></pre>
+<ol start="3">
+<li>
+<p>最後，還需要在每一列尾加上 ✅ 的 Emoji，數量需隨著每列元素遞增，且可以發現每列的 Emoji 都會在同樣的位置長出來。</p>
+<p>我們要先讓前面的小駝峰字串都達到一樣的長度，聽起來有點抽象，但只要用 <code>padEnd()</code> 方法就能實現。</p>
+<blockquote>
+<p>The <code>padEnd()</code> method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of this string. - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd">MDN web docs</a></p>
+</blockquote>
+<p>簡單來說，<mark>這個方法會幫助我們在字串末端填充特定的字符，直到字串達到我們指定的長度</mark>。套用在題目上的話會變成：</p>
+</li>
+</ol>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#BFBDB6">console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">`</span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">output</span><span style="color:#F29668">.</span><span style="color:#FFB454">padEnd</span><span style="color:#BFBDB6">(</span><span style="color:#D2A6FF">20</span><span style="color:#BFBDB6B3">,</span><span style="color:#AAD94C"> ''</span><span style="color:#BFBDB6">)</span><span style="color:#FF8F40">}${</span><span style="color:#AAD94C">'✅'</span><span style="color:#F29668">.</span><span style="color:#FFB454">repeat</span><span style="color:#BFBDB6">(i </span><span style="color:#F29668">+</span><span style="color:#D2A6FF"> 1</span><span style="color:#BFBDB6">)</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">//userName              ✅</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">//someVariable          ✅✅</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">//calculateAge          ✅✅✅</span></span>
+<span class="line"></span></code></pre>
+<blockquote>
+<p>📝 <strong>備註</strong></p>
+<p>在 output 的長度達到 20 以前，會不斷填充空白字元，如此一來最後 <code>output.lenght</code> 的結果皆會等於 20。（與之相對應的也有 <code>padStart</code> 方法，將重複的字符填充在最前面，可以到 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/padStart">MDN</a> 網站上看更詳細的說明。）</p>
+</blockquote>
+<p>再利用 <code>repeat()</code> 方法重複印出 ✅ Emoji，就大功告成囉～ 完整的程式碼如下：</p>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#BFBDB6">document</span><span style="color:#F29668">.</span><span style="color:#FFB454">querySelector</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'button'</span><span style="color:#BFBDB6">)</span><span style="color:#F29668">.</span><span style="color:#FFB454">addEventListener</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'click'</span><span style="color:#BFBDB6B3">,</span><span style="color:#FF8F40"> function</span><span style="color:#BFBDB6">() {</span></span>
+<span class="line"><span style="color:#FF8F40">  const</span><span style="color:#BFBDB6"> text </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> document</span><span style="color:#F29668">.</span><span style="color:#FFB454">querySelector</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'textarea'</span><span style="color:#BFBDB6">)</span><span style="color:#F29668">.</span><span style="color:#BFBDB6">value</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#FF8F40">  const</span><span style="color:#BFBDB6"> rows </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> text</span><span style="color:#F29668">.</span><span style="color:#FFB454">split</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'</span><span style="color:#95E6CB">\n</span><span style="color:#AAD94C">'</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#BFBDB6">  console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(rows)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FF8F40">  for</span><span style="color:#BFBDB6"> (</span><span style="color:#FF8F40">const</span><span style="color:#BFBDB6"> [i</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> row] </span><span style="color:#F29668">of</span><span style="color:#BFBDB6"> rows</span><span style="color:#F29668">.</span><span style="color:#FFB454">entries</span><span style="color:#BFBDB6">()) {</span></span>
+<span class="line"><span style="color:#FF8F40">    const</span><span style="color:#BFBDB6"> [first</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> second] </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> row</span><span style="color:#F29668">.</span><span style="color:#FFB454">toLowerCase</span><span style="color:#BFBDB6">()</span><span style="color:#F29668">.</span><span style="color:#FFB454">trim</span><span style="color:#BFBDB6">()</span><span style="color:#F29668">.</span><span style="color:#FFB454">split</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'_'</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">    </span></span>
+<span class="line"><span style="color:#FF8F40">    const</span><span style="color:#BFBDB6"> output </span><span style="color:#F29668">=</span><span style="color:#AAD94C"> `</span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">first</span><span style="color:#FF8F40">}${</span><span style="color:#BFBDB6">second</span><span style="color:#F29668">.</span><span style="color:#FFB454">replace</span><span style="color:#BFBDB6">(</span></span>
+<span class="line"><span style="color:#BFBDB6">      second[</span><span style="color:#D2A6FF">0</span><span style="color:#BFBDB6">]</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> </span></span>
+<span class="line"><span style="color:#BFBDB6">      second[</span><span style="color:#D2A6FF">0</span><span style="color:#BFBDB6">]</span><span style="color:#F29668">.</span><span style="color:#FFB454">toUpperCase</span><span style="color:#BFBDB6">()</span></span>
+<span class="line"><span style="color:#BFBDB6">      )</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#BFBDB6">      console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">`</span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">output</span><span style="color:#F29668">.</span><span style="color:#FFB454">padEnd</span><span style="color:#BFBDB6">(</span><span style="color:#D2A6FF">20</span><span style="color:#BFBDB6B3">,</span><span style="color:#AAD94C"> ' '</span><span style="color:#BFBDB6">)</span><span style="color:#FF8F40">}${</span><span style="color:#AAD94C">'✅'</span><span style="color:#F29668">.</span><span style="color:#FFB454">repeat</span><span style="color:#BFBDB6">(i </span><span style="color:#F29668">+</span><span style="color:#D2A6FF"> 1</span><span style="color:#BFBDB6">)</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">  }</span></span>
+<span class="line"><span style="color:#BFBDB6">})</span></span>
+<span class="line"></span></code></pre>
+<h2 id="結語">結語</h2>
+<p>以上簡短說明今天的練習題以及其中用到的小技巧！</p>
+<p>覺得自己寫文章的速度還是太慢了，希望未來能夠邊思考、整理思緒，一邊產出文章，才不會花太多時間在經營部落格上面。畢竟初衷是發表文章當作筆記，能夠好好練習程式碼的運用才是最重要的。</p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p><a href="https://www.fooish.com/javascript/string/split.html">JavaScript String split() (字串切割)</a></p>
+<p><a href="https://bobbyhadz.com/blog/javascript-typeerror-trim-is-not-a-function">TypeError: trim is not a function in JavaScript[Solved]</a></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String">字串 - JavaScript | MDN</a> - 查看更多字串的跳脫符號</p>
+</blockquote>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>有任何想法想分享或協助勘誤，歡迎留言交流指教！🦀</span></span>
+<span class="line"><span></span></span></code></pre>  </article> <footer class="mt-5">  <p class="flex items-center gap-2"> <span class="inline-flex items-center"> <i class="i-mdi-chevron-double-left icon"></i> <a href="/posts/tech/frontend-daily-note-2">上一篇: Daily notes 2：什麼是 Callback function？</a> </span>  </p> </footer> <!-- <footer class="mt-5">
+  <p class="mb-2.5">{t('page_number', page.currentPage)} / {t('page_count', page.lastPage)}</p>
+  <p class="flex items-center gap-2">
+    <span class="inline-flex items-center">
+      <i class="i-mdi-chevron-double-left icon"></i>
+      {page.url.prev ? <a href={page.url.prev}> {t('prev')} </a> : <span>{t('prev')}</span>}
+    </span>
+
+    <span class="inline-flex items-center">
+      {page.url.next ? <a href={page.url.next}>{t('next')}</a> : <span>{t('next')}</span>}
+      <i class="i-mdi-chevron-double-right icon"></i>
+    </span>
+  </p>
+</footer> -->  <section class="giscus mx-auto my-5 w-full"></section> <script src="https://giscus.app/client.js" data-repo="millieqiu/millie-blog" data-repo-id="R_kgDOL889XA" data-category="Announcements" data-category-id="DIC_kwDOL889XM4CfbtC" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="noborder_light" data-lang="zh-TW" data-loading="lazy" crossorigin="anonymous" async></script>  </main> <footer font-bold text-3 un-flex="~ col gap-1" un-lg="gap-3.5" class="lg:hidden p-7.5"> <p>
+© 2024 <a target="_blank" href="https://my-attic-millieqiuuuu.vercel.app/" rel="noopener noreferrer">Millie Qiu</a> </p> <p>
+Theme
+<a target="_blank" href="https://github.com/Moeyua/astro-theme-typography" rel="noopener noreferrer">Typography</a>
+by <a target="_blank" href="https://moeyua.com" rel="noopener noreferrer">Moeyua</a> </p> <p>
+Proudly published with
+<a target="_blank" href="https://astro.build" rel="noopener noreferrer">Astro</a> </p> </footer> </div> </body></html>  

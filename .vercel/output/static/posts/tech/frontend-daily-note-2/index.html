@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="zh-Hant-TW"> <head><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.8.7"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet"><title>Daily notes 2：什麼是 Callback function？</title><meta charset="utf-8"><link rel="canonical" href="https://my-attic-millieqiuuuu.vercel.app/posts/tech/frontend-daily-note-2/"><meta name="description" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><meta name="robots" content="index, follow"><meta property="og:title" content="Daily notes 2：什麼是 Callback function？"><meta property="og:type" content="article"><meta property="og:image" content="https://my-attic-millieqiuuuu.vercel.app/OpenGraph-img.png"><meta property="og:url" content="https://my-attic-millieqiuuuu.vercel.app/"><link rel="icon" href="/favicon.png" type="image/svg+xml"><meta name="twitter:image:src" content="https://my-attic-millieqiuuuu.vercel.app/OpenGraph-img.png"><meta name="twitter:image:alt" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><meta name="twitter:creator" content="@Mi11ieeeHowdy"><meta name="twitter:site" content="@Mi11ieeeHowdy"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Daily notes 2：什麼是 Callback function？"><meta name="twitter:description" content="Millie 的個人網站。在學習的道路上，試著將知識彙整成技術文章，並透過文字記錄自己的生活。"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-3L69WG49DJ"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3L69WG49DJ");
+    </script><link rel="stylesheet" href="/_astro/about.NoyNny2r.css">
+<style>.code-container{position:relative}.clipboard-copy{position:absolute;top:.5rem;right:.5rem;width:1.75rem;height:1.75rem;display:flex;justify-content:center;align-items:center;border-radius:.25rem}.clipboard-copy:hover{background-color:#30363d}
+</style><script type="module">function u(e){const t=document.createElement("pre");return t.style.width="1px",t.style.height="1px",t.style.position="fixed",t.style.top="5px",t.textContent=e,t}function s(e){if("clipboard"in navigator)return navigator.clipboard.writeText(e.textContent||"");const t=getSelection();if(t==null)return Promise.reject(new Error);t.removeAllRanges();const n=document.createRange();return n.selectNodeContents(e),t.addRange(n),document.execCommand("copy"),t.removeAllRanges(),Promise.resolve()}function i(e){if("clipboard"in navigator)return navigator.clipboard.writeText(e);const t=document.body;if(!t)return Promise.reject(new Error);const n=u(e);return t.appendChild(n),s(n),t.removeChild(n),Promise.resolve()}async function d(e){const t=e.getAttribute("for"),n=e.getAttribute("value");function o(){e.dispatchEvent(new CustomEvent("clipboard-copy",{bubbles:!0}))}if(e.getAttribute("aria-disabled")!=="true"){if(n)await i(n),o();else if(t){const r="getRootNode"in Element.prototype?e.getRootNode():e.ownerDocument;if(!(r instanceof Document||"ShadowRoot"in window&&r instanceof ShadowRoot))return;const c=r.getElementById(t);c&&(await p(c),o())}}}function p(e){return e instanceof HTMLInputElement||e instanceof HTMLTextAreaElement?i(e.value):e instanceof HTMLAnchorElement&&e.hasAttribute("href")?i(e.href):s(e)}function f(e){const t=e.currentTarget;t instanceof HTMLElement&&d(t)}function l(e){if(e.key===" "||e.key==="Enter"){const t=e.currentTarget;t instanceof HTMLElement&&(e.preventDefault(),d(t))}}function m(e){e.currentTarget.addEventListener("keydown",l)}function y(e){e.currentTarget.removeEventListener("keydown",l)}class h extends HTMLElement{static define(t="clipboard-copy",n=customElements){return n.define(t,this),this}constructor(){super(),this.addEventListener("click",f),this.addEventListener("focus",m),this.addEventListener("blur",y)}connectedCallback(){this.hasAttribute("tabindex")||this.setAttribute("tabindex","0"),this.hasAttribute("role")||this.setAttribute("role","button")}get value(){return this.getAttribute("value")||""}set value(t){this.setAttribute("value",t)}}const a=typeof globalThis<"u"?globalThis:window;try{a.ClipboardCopyElement=h.define()}catch(e){if(!(a.DOMException&&e instanceof DOMException&&e.name==="NotSupportedError")&&!(e instanceof ReferenceError))throw e}document.addEventListener("clipboard-copy",function(e){const n=e.target.querySelector(".icon");n.classList.replace("i-mdi-content-copy","i-mdi-check"),setTimeout(()=>{n.classList.replace("i-mdi-check","i-mdi-content-copy")},1500)});const b=Array.from(document.querySelectorAll("pre")),g="<div class='i-mdi-content-copy icon text-white'></div>";for(let e of b){let t=document.createElement("div");t.className="code-container";let n=document.createElement("clipboard-copy"),o=e.querySelector("code");n.value=o?.innerText??"",n.className="clipboard-copy",n.innerHTML=g,e.appendChild(n),e.parentNode?.insertBefore(t,e),t.appendChild(e)}
+</script>
+<script type="module" src="/_astro/page.DFwqf4PB.js"></script></head> <body> <div un-max-lg="animate-fadein-down" un-lg="flex flex-row-reverse justify-between gap-4 px-8 mx-auto max-w-6xl" class="container contain-layout m-a"> <div un-lg="sticky top-0 h-screen py-20 animate-fadein-left gap-8" un-lg:flex="~ col justify-between items-start gap-4" class="p-7.5"> <header un-lg="grow-1 justify-between items-start" un-flex="~ col gap-2.5" class="text-center"> <hgroup un-hover:lg="bg-foreground color-background pt-3.75 pb-8.75 " un-lg=" write-vertical-right items-start px-2.5 pb-12 b-l-2px b-l-foreground-solid text-left" un-flex="~ col gap-2.5" class="cursor-pointer transition-[padding,background] duration-800 ease-in-out"> <a class="normal" href="/"> <h3 class="text-5 font-extrabold font-serif">Millie Qiu</h3> <h1 class="text-8 font-extrabold font-serif">Millie&#39;s Attic</h1> </a> </hgroup> <nav class="text-center font-bold" un-flex="~ col gap-2"> <ul un-lg="flex-col items-start text-4" class="text-3.5" un-flex="~ row gap-2 justify-center"> <li> <a href="/posts/page/1">Posts</a> </li><li> <a href="/archive">Archive</a> </li><li> <a href="/categories">Categories</a> </li><li> <a href="/about">About</a> </li> </ul> <ul un-flex="~ row gap-1 justify-center"> <li> <a href="https://github.com/millieqiu" target="_blank" title="github" class="icon i-mdi-github"></a> </li><li> <a href="https://x.com/Mi11ieeeHowdy" target="_blank" title="twitter" class="icon i-mdi-twitter"></a> </li> </ul> </nav> </header> <footer font-bold text-3 un-flex="~ col gap-1" un-lg="gap-3.5" class="max-lg:hidden"> <p>
+© 2024 <a target="_blank" href="https://my-attic-millieqiuuuu.vercel.app/" rel="noopener noreferrer">Millie Qiu</a> </p> <p>
+Theme
+<a target="_blank" href="https://github.com/Moeyua/astro-theme-typography" rel="noopener noreferrer">Typography</a>
+by <a target="_blank" href="https://moeyua.com" rel="noopener noreferrer">Moeyua</a> </p> <p>
+Proudly published with
+<a target="_blank" href="https://astro.build" rel="noopener noreferrer">Astro</a> </p> </footer> </div> <main un-lg="py-20 min-w-xl animate-fadein-down" class="p-7.5">  <article class="heti"> <header> <h1 class="post-title!"> <a href="/posts/tech/frontend-daily-note-2/">Daily notes 2：什麼是 Callback function？</a> </h1> <div class="mt-2 text-3.5"> <span>發佈於</span> <time>2024-03-04</time> <a class="ml-2.5" href="/categories/Frontend">
+# Frontend </a> </div> </header>  <p>本篇文章是我在 Udemy 上加強 JavaScript 基礎的學習筆記。<br>
+這兩小節的課程中，老師先介紹了「First-class Function」以及「Higher-order Function」的差別，接著再舉一段簡單的程式碼範例讓我們了解什麼是 <strong>Callback function</strong>。</p>
+<hr>
+<h1 id="first-class-function">First-class Function</h1>
+<p>JavaScript 是擁有 First-class Function（一級函式）特性的程式語言。</p>
+<ul>
+<li>
+<p>JS 將 function 當作一等公民</p>
+</li>
+<li>
+<p>將 function 視為是一種「值」（Value）</p>
+</li>
+<li>
+<p>function 是一種物件型態的資料（<code>typeOf function</code> = Object）</p>
+</li>
+</ul>
+<p>由於上面特殊的定義，我們也可以對 function 做許多對其他資料型別的變數也可以操作的行為，包含：</p>
+<ol>
+<li>
+<p>將函式儲存成變數（透過 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function">Function Expressions</a>）</p>
+</li>
+<li>
+<p>將函式儲存成一種物件的方法（Method）</p>
+</li>
+</ol>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF8F40">const</span><span style="color:#BFBDB6"> counter </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> {</span></span>
+<span class="line"><span style="color:#BFBDB6">    value</span><span style="color:#BFBDB6B3">:</span><span style="color:#D2A6FF"> 23</span><span style="color:#BFBDB6">;</span></span>
+<span class="line"><span style="color:#BFBDB6">    inc: </span><span style="color:#FF8F40">function</span><span style="color:#BFBDB6">() {</span><span style="color:#39BAE6;font-style:italic">this</span><span style="color:#F29668">.</span><span style="color:#BFBDB6">value </span><span style="color:#F29668">++</span><span style="color:#BFBDB6">}</span></span>
+<span class="line"><span style="color:#BFBDB6">}</span></span>
+<span class="line"></span></code></pre>
+<ol start="3">
+<li>
+<p>將 function 當作參數代入另一個函式中（最簡單的例子就是 <code>addEventListener</code>）</p>
+</li>
+<li>
+<p>可以在一個 function 中回傳（return）另一個 function</p>
+</li>
+<li>
+<p>擁有 function 自己的方法（例如 <code>bind</code>）</p>
+</li>
+</ol>
+<p>也是因為 First-class Function 的特性，才讓我們能創造出並使用<strong>高階函式（Higher-Order Function）</strong>。</p>
+<h1 id="higher-order-function">Higher-Order Function</h1>
+<p>高階函式（Higher order function）是指當<mark>一個函式可以接受另一個函式作為參數</mark>或者<mark>返回一個函式作為結果的函式</mark>。</p>
+<p>第一個情況，我們以事件偵聽的例子（🌰）來說明：</p>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF8F40">const</span><span style="color:#FFB454"> greet</span><span style="color:#F29668"> =</span><span style="color:#BFBDB6"> () </span><span style="color:#FF8F40">=></span><span style="color:#BFBDB6"> console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'Hello!'</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">btn</span><span style="color:#F29668">.</span><span style="color:#FFB454">addEventListener</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'click'</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> greet)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span></code></pre>
+<p>在上述的程式碼中，<code>addEventListener</code> 接收了 <code>greet</code> 函式作為參數，由此可知它就是所謂的<strong>高階函式</strong>；而 <code>greet</code> 函式則是我們後續會提到的 <strong>回呼函式</strong>（Callback Function）。</p>
+<blockquote>
+<p>💡 <strong>提示</strong></p>
+<p>所謂的「Callback function」其實就是「把函式當作另一個函式（Higher-order Function）的參數，透過另一個函式來呼叫它」。</p>
+</blockquote>
+<p>第二種情況的範例程式碼如下：</p>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF8F40">function</span><span style="color:#FFB454"> count</span><span style="color:#BFBDB6">() {</span></span>
+<span class="line"><span style="color:#FF8F40">    let</span><span style="color:#BFBDB6"> counter </span><span style="color:#F29668">=</span><span style="color:#D2A6FF"> 0</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#FF8F40">    return</span><span style="color:#FF8F40"> function</span><span style="color:#BFBDB6">() {</span></span>
+<span class="line"><span style="color:#BFBDB6">        counter</span><span style="color:#F29668">++</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">    }</span><span style="color:#AAD94C">''</span></span>
+<span class="line"><span style="color:#BFBDB6">}</span></span>
+<span class="line"></span></code></pre>
+<p>其中 <code>count</code> 函式就是 Higher-order function，而被 return 的函式則是所謂的 <strong>Returned function</strong>。不過 Returned function 的用法又更進階了，目前在這個小節並沒有被提到，會在其他篇作補充。</p>
+<p>看到這裡，有些人可能會疑惑，「First-class function」跟「Higher-order function」聽起來很類似，難道它們不是同一件事嗎？</p>
+<p>答案是…NO ❌！</p>
+<p>First-class function 只是<strong>一個特性</strong>，代表「Function 是一個 Value」這個概念。不只 JS ，其他像是 Go、Python 等語言也都支持這個特性。</p>
+<p>然而 Higher-order function 則是在實際的程式碼中會出現的一種函式，而能夠實現這類函式的原因，就歸功於前面提到過的 First-class function 的存在。</p>
+<hr>
+<h1 id="callback-function">Callback Function</h1>
+<p>以下用一段簡單的程式碼來帶大家瞭解什麼是「Callback function」：</p>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#ACB6BF8C;font-style:italic">// 將字串的第一個單字轉換成大寫</span></span>
+<span class="line"><span style="color:#FF8F40">const</span><span style="color:#FFB454"> upperFirstWord</span><span style="color:#F29668"> =</span><span style="color:#FF8F40"> function</span><span style="color:#BFBDB6"> (</span><span style="color:#D2A6FF">str</span><span style="color:#BFBDB6">) {</span></span>
+<span class="line"><span style="color:#FF8F40">    const</span><span style="color:#BFBDB6"> [first</span><span style="color:#BFBDB6B3">,</span><span style="color:#F29668"> ...</span><span style="color:#BFBDB6">others] </span><span style="color:#F29668">=</span><span style="color:#BFBDB6"> str</span><span style="color:#F29668">.</span><span style="color:#FFB454">split</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">' '</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#FF8F40">    return</span><span style="color:#BFBDB6"> [first</span><span style="color:#F29668">.</span><span style="color:#FFB454">toUpperCase</span><span style="color:#BFBDB6">()</span><span style="color:#BFBDB6B3">,</span><span style="color:#F29668"> ...</span><span style="color:#BFBDB6">others]</span><span style="color:#F29668">.</span><span style="color:#FFB454">join</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">' '</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// Higher-order function</span></span>
+<span class="line"><span style="color:#FF8F40">const</span><span style="color:#FFB454"> transformer</span><span style="color:#F29668"> =</span><span style="color:#FF8F40"> function</span><span style="color:#BFBDB6"> (</span><span style="color:#D2A6FF">str</span><span style="color:#BFBDB6B3">,</span><span style="color:#D2A6FF"> fn</span><span style="color:#BFBDB6">) {</span></span>
+<span class="line"><span style="color:#BFBDB6">    console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">`Original string: </span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">str</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">    console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">`Transformed string: </span><span style="color:#FF8F40">${</span><span style="color:#FFB454">fn</span><span style="color:#BFBDB6">(str)</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">    console</span><span style="color:#F29668">.</span><span style="color:#FFB454">log</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">`Transformed by: </span><span style="color:#FF8F40">${</span><span style="color:#BFBDB6">fn</span><span style="color:#F29668">.</span><span style="color:#BFBDB6">name</span><span style="color:#FF8F40">}</span><span style="color:#AAD94C">`</span><span style="color:#BFBDB6">)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"><span style="color:#BFBDB6">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// 呼叫 upperFirstWord 函式</span></span>
+<span class="line"><span style="color:#FFB454">transformer</span><span style="color:#BFBDB6">(</span><span style="color:#AAD94C">'JavaScript is the best!'</span><span style="color:#BFBDB6B3">,</span><span style="color:#BFBDB6"> upperFirstWord)</span><span style="color:#BFBDB6B3">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// 列印結果：</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// Original string: JavaScript is the best!</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// Transformed string: JAVASCRIPT is the best!</span></span>
+<span class="line"><span style="color:#ACB6BF8C;font-style:italic">// Transformed by: upperFirstWord</span></span>
+<span class="line"></span></code></pre>
+<p>在第 14 行，我們呼叫 <code>transformer()</code> 這個函式，它就是前面提到過的高階函式（Higher-order function），並在參數 fn 中代入 <code>upperFirstWord</code> 函式，也就是所謂的 Callback function。</p>
+<p>我們並沒有直接呼叫 <code>upperFirstWord()</code> 這個函式，而是將其作為參數傳遞，後續再讓 <code>transformer()</code> 函式來呼叫它。</p>
+<p>透過上面的例子，也不難發現其實 <mark>Callback function 跟一般的函式沒什麼不同，差別在於被呼叫執行的時機</mark>。</p>
+<p>在 JavaScript 的世界中，經常可以看到 Callback function 的用法。它給我們帶來以下幾點好處：</p>
+<ol>
+<li>
+<p>幫助我們能更輕鬆地將程式碼分割成「<strong>可以重複使用</strong>」（reusabel）以及「<strong>相互有關聯</strong>」（interconnected）的段落。</p>
+</li>
+<li>
+<p><strong>幫助我們實現「物件抽象化」（Abstraction）</strong>。</p>
+</li>
+</ol>
+<blockquote>
+<p>💡 <strong>提示</strong></p>
+<p>抽象化（Abstraction）是物件導向程式設計（Object-Oriented Programming）的重要概念之一。簡單來說，指的是當程式執行時，能夠隱藏另一部分程式碼背後的運作的細節。</p>
+</blockquote>
+<p>以上方的範例來看，<code>tranformer()</code> 函式在運作時，需要關注的事情就只有「能否順利將 input 中字串轉換成我們需要的格式」，因此並不在乎背後複雜的機制是如何將字串轉換成大寫的。</p>
+<p>在這邊先大略提一個概念，剩下的細節會在老師後面教到「物件導向程式語言」時再回來補充。</p>
+<p>不過需要注意的是，若 Callback function 的設計及使用不當，讓函式之間的相依過深，callback 多層之後產生的「波動拳」就會難以維護，形成所謂的「Callback hell」。</p>
+<p><img  src="/_astro/callback-hell.B-23ApXU_Z1PTtyg.webp" alt="Callback Hell Image" width="721" height="420" loading="lazy" decoding="async"></p>
+<p>可以說 Callback function 會是 JS 課程中數一數二重要的單元，老師在章節的末尾千交代萬囑咐一定要好好釐清當中的觀念，也是我這次覺得提筆做筆記的原因～✏</p>
+<p>希望這篇文能夠幫助到跟我一樣剛在學習的人，快速建立一個觀念，背後還有很多複雜的機制跟原理，就讓大家自行去挖掘囉！</p>
+<hr>
+<p>Reference：</p>
+<blockquote>
+<p><a href="https://pjchender.blogspot.com/2016/03/javascriptfunctionobjects.html">[筆記] JavaScript 中函式就是一種物件 ─ 談談 first class function（一等公民函式）</a> <br>
+<a href="https://www.casper.tw/development/2020/09/24/first-class-function/">JavaScript 一級函式 （First Class Functions）</a> <br>
+<a href="https://ithelp.ithome.com.tw/articles/10192739">重新認識 JavaScript: Day 18Callback Function 與 IIFE</a></p>
+</blockquote>
+<pre class="astro-code ayu-dark" style="background-color:#0b0e14;color:#bfbdb6; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>有任何想法想分享或協助勘誤，歡迎留言交流指教！🏹</span></span>
+<span class="line"><span></span></span></code></pre>  </article> <footer class="mt-5">  <p class="flex items-center gap-2"> <span class="inline-flex items-center"> <i class="i-mdi-chevron-double-left icon"></i> <a href="/posts/tech/frontend-js-var-let-const">上一篇: JS 變數宣告：淺談 var、let、const 的差異</a> </span> <span class="inline-flex items-center"> <a href="/posts/tech/frontend-daily-note-1">下一篇: Daily Notes 1：String in Modern JS</a> <i class="i-mdi-chevron-double-right icon"></i> </span> </p> </footer> <!-- <footer class="mt-5">
+  <p class="mb-2.5">{t('page_number', page.currentPage)} / {t('page_count', page.lastPage)}</p>
+  <p class="flex items-center gap-2">
+    <span class="inline-flex items-center">
+      <i class="i-mdi-chevron-double-left icon"></i>
+      {page.url.prev ? <a href={page.url.prev}> {t('prev')} </a> : <span>{t('prev')}</span>}
+    </span>
+
+    <span class="inline-flex items-center">
+      {page.url.next ? <a href={page.url.next}>{t('next')}</a> : <span>{t('next')}</span>}
+      <i class="i-mdi-chevron-double-right icon"></i>
+    </span>
+  </p>
+</footer> -->  <section class="giscus mx-auto my-5 w-full"></section> <script src="https://giscus.app/client.js" data-repo="millieqiu/millie-blog" data-repo-id="R_kgDOL889XA" data-category="Announcements" data-category-id="DIC_kwDOL889XM4CfbtC" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="noborder_light" data-lang="zh-TW" data-loading="lazy" crossorigin="anonymous" async></script>  </main> <footer font-bold text-3 un-flex="~ col gap-1" un-lg="gap-3.5" class="lg:hidden p-7.5"> <p>
+© 2024 <a target="_blank" href="https://my-attic-millieqiuuuu.vercel.app/" rel="noopener noreferrer">Millie Qiu</a> </p> <p>
+Theme
+<a target="_blank" href="https://github.com/Moeyua/astro-theme-typography" rel="noopener noreferrer">Typography</a>
+by <a target="_blank" href="https://moeyua.com" rel="noopener noreferrer">Moeyua</a> </p> <p>
+Proudly published with
+<a target="_blank" href="https://astro.build" rel="noopener noreferrer">Astro</a> </p> </footer> </div> </body></html>  
