@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^2.9.5
     version: 2.11.0
   '@unocss/reset':
-    specifier: ^0.59.0
-    version: 0.59.4
+    specifier: ^0.60.3
+    version: 0.60.3
   '@unocss/transformer-directives':
     specifier: ^0.58.5
     version: 0.58.9
@@ -1772,10 +1772,6 @@ packages:
       '@unocss/core': 0.60.3
       '@unocss/preset-mini': 0.60.3
       '@unocss/rule-utils': 0.60.3
-    dev: true
-
-  /@unocss/reset@0.59.4:
-    resolution: {integrity: sha512-Upy4xzdWl4RChbLAXBq1BoR4WqxXMoIfjvtcwSZcZK2sylXCFAseSWnyzJFdSiXPqNfmMuNgPXgiSxiQB+cmNA==}
     dev: true
 
   /@unocss/reset@0.60.3:
