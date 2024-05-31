@@ -4,7 +4,7 @@ import { THEME_CONFIG } from "./src/theme.config";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import vercel from "@astrojs/vercel/static";
+// import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +19,5 @@ export default defineConfig({
   },
   integrations: [UnoCSS({
     injectReset: true
-  }), sitemap(), robotsTxt(), mdx()],
-  output: "static",
-  adapter: vercel()
+  }), sitemap(), robotsTxt(), mdx()]
 });
