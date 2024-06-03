@@ -65,8 +65,8 @@ devDependencies:
     specifier: ^0.60.3
     version: 0.60.3
   '@unocss/transformer-directives':
-    specifier: ^0.58.5
-    version: 0.58.9
+    specifier: ^0.60.4
+    version: 0.60.4
   bumpp:
     specifier: ^9.4.0
     version: 9.4.1
@@ -1698,12 +1698,12 @@ packages:
       unconfig: 0.3.13
     dev: true
 
-  /@unocss/core@0.58.9:
-    resolution: {integrity: sha512-wYpPIPPsOIbIoMIDuH8ihehJk5pAZmyFKXIYO/Kro98GEOFhz6lJoLsy6/PZuitlgp2/TSlubUuWGjHWvp5osw==}
-    dev: true
-
   /@unocss/core@0.60.3:
     resolution: {integrity: sha512-4bBX1pavDl2DSCozEII7bxYGT0IkyO7kKlUuCtooTePWyLjf2F7essdzHkJ00EpNR64kkebR9V0lqBMBo07VPw==}
+    dev: true
+
+  /@unocss/core@0.60.4:
+    resolution: {integrity: sha512-6tz8KTzC30oB0YikwRQoIpJ6Y6Dg+ZiK3NfCIsH+UX11bh2J2M53as2EL/5VQCqtiUn3YP0ZEzR2d1AWX78RCA==}
     dev: true
 
   /@unocss/extractor-arbitrary-variants@0.60.3:
@@ -1801,19 +1801,19 @@ packages:
     resolution: {integrity: sha512-EuC8gkh8L8WvPOcjS/KqprEJXIKcpBPm+ou5G9D6WgDmJ+TgQrri5oR+QUmOmEnueQkVL7bnkFkIKeg71SJLFA==}
     dev: true
 
-  /@unocss/rule-utils@0.58.9:
-    resolution: {integrity: sha512-45bDa+elmlFLthhJmKr2ltKMAB0yoXnDMQ6Zp5j3OiRB7dDMBkwYRPvHLvIe+34Ey7tDt/kvvDPtWMpPl2quUQ==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@unocss/core': 0.58.9
-      magic-string: 0.30.10
-    dev: true
-
   /@unocss/rule-utils@0.60.3:
     resolution: {integrity: sha512-I47/DcKQ2z12W80+Ffth0K6LzNvqcQPYRWk7KwVemVoEiGYamMV8/s+SbB26Fk9KUFjh+Ns/pGAo4iJZo0ueUQ==}
     engines: {node: '>=14'}
     dependencies:
       '@unocss/core': 0.60.3
+      magic-string: 0.30.10
+    dev: true
+
+  /@unocss/rule-utils@0.60.4:
+    resolution: {integrity: sha512-7qUN33NM4T/IwWavm9VIOCZ2+4hLBc0YUGxcMNTDZSFQRQLkWe3N5dOlgwKXtMyMKatZfbIRUKVDUgvEefoCTA==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@unocss/core': 0.60.4
       magic-string: 0.30.10
     dev: true
 
@@ -1844,19 +1844,19 @@ packages:
       '@unocss/core': 0.60.3
     dev: true
 
-  /@unocss/transformer-directives@0.58.9:
-    resolution: {integrity: sha512-pLOUsdoY2ugVntJXg0xuGjO9XZ2xCiMxTPRtpZ4TsEzUtdEzMswR06Y8VWvNciTB/Zqxcz9ta8rD0DKePOfSuw==}
-    dependencies:
-      '@unocss/core': 0.58.9
-      '@unocss/rule-utils': 0.58.9
-      css-tree: 2.3.1
-    dev: true
-
   /@unocss/transformer-directives@0.60.3:
     resolution: {integrity: sha512-JuFpxyB1yvS2YoiguO5+8Ou6k9yyojZCnnDYXXZqMGLp1KdLiDcAPZQyShoD5HLzPGHtAbQELUz9TcX3VMLEoQ==}
     dependencies:
       '@unocss/core': 0.60.3
       '@unocss/rule-utils': 0.60.3
+      css-tree: 2.3.1
+    dev: true
+
+  /@unocss/transformer-directives@0.60.4:
+    resolution: {integrity: sha512-u3fQI8RszMhUevhJICtQ/bNpAfbh8MEXQf7YNnzUvLvbXGkkoieyU5mj0ray6fbToqxfxVceQtXYcFYIuf4aNg==}
+    dependencies:
+      '@unocss/core': 0.60.4
+      '@unocss/rule-utils': 0.60.4
       css-tree: 2.3.1
     dev: true
 
