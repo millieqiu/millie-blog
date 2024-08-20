@@ -30,17 +30,6 @@ export async function getPosts() {
   return posts
 }
 
-// Daily Digest
-export async function getDaily() {
-  const dailys = await getCollection('daily')
-  dailys.sort((a, b) => {
-    const aDate = a.data.pubDate || new Date()
-    const bDate = b.data.pubDate || new Date()
-    return bDate.getTime() - aDate.getTime()
-  })
-  return dailys
-}
-
 const parser = new MarkdownIt()
 
 export function getPostDescription(post: Post) {
