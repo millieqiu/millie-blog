@@ -21,10 +21,10 @@ export const THEME_CONFIG: App.Locals['config'] = {
       name: "twitter",
       href: "https://x.com/Mi11ieeeHowdy",
     },
-    // {
-    //   name: "twitter",
-    //   href: "https://x.com/Mi11ieeeHowdy",
-    // }
+    {
+      name: "book-open",
+      href: "millie.yi110@gmail.com",
+    }
   ],
   /** your header info */
   header: {
@@ -36,10 +36,6 @@ export const THEME_CONFIG: App.Locals['config'] = {
       name: "Posts",
       href: "/posts/page/1",
     },
-    // {
-    //   name: "Daily",
-    //   href: "/daily"
-    // },
     {
       name: "Archive",
       href: "/archive",
