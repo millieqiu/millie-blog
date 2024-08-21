@@ -143,8 +143,10 @@ transformer('JavaScript is the best!', upperFirstWord);
 
 Reference：
 
-> [\[筆記\] JavaScript 中函式就是一種物件 ─ 談談 first class function（一等公民函式）](https://pjchender.blogspot.com/2016/03/javascriptfunctionobjects.html) <br>
-> [JavaScript 一級函式 （First Class Functions）](https://www.casper.tw/development/2020/09/24/first-class-function/) <br>
+> [\[筆記\] JavaScript 中函式就是一種物件 ─ 談談 first class function（一等公民函式）](https://pjchender.blogspot.com/2016/03/javascriptfunctionobjects.html) 
+>
+> [JavaScript 一級函式 （First Class Functions）](https://www.casper.tw/development/2020/09/24/first-class-function/)
+>
 > [重新認識 JavaScript: Day 18Callback Function 與 IIFE](https://ithelp.ithome.com.tw/articles/10192739)
 
 ```plaintext

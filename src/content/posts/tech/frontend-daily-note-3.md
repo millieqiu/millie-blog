@@ -10,7 +10,7 @@ categories: ['Frontend']
 
 今天公司的前輩介紹了三種使用在 `link` 標籤上的效能優化的方法，可以改變瀏覽器下載資源的優先度－－也就是先讓網站會用到的檔案「偷跑」，以免網站內容過多時會卡頓、loading 太久，以下簡單將重點稍微整理。
 
-<div style="width:480px"><iframe allow="fullscreen" frameBorder="0" height="320" src="https://giphy.com/embed/u2wg2uXJbHzkXkPphr/video" width="480"></iframe></div>
+<div style="width:100%;height:0;padding-bottom:69%;position:relative;"><iframe src="https://giphy.com/embed/lZfieM3rRK5ZTMOnNd" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
 
 ## 載入順序
 
@@ -53,9 +53,12 @@ categories: ['Frontend']
 
 Reference：
 
-> [性能优化之 preload、prefetch、preconnect 的区别与使用](https://juejin.cn/post/7128400578467594248) <br>
-> [\[教學\] Preload, Prefetch 和 Preconnect 的差異](https://www.shubo.io/preload-prefetch-preconnect/) <br>
-> [Browser Resource Hints: preload, prefetch, and preconnect](https://www.debugbear.com/blog/resource-hints-rel-preload-prefetch-preconnect) <br>
+> [性能优化之 preload、prefetch、preconnect 的区别与使用](https://juejin.cn/post/7128400578467594248)
+>
+> [\[教學\] Preload, Prefetch 和 Preconnect 的差異](https://www.shubo.io/preload-prefetch-preconnect/) 
+>
+> [Browser Resource Hints: preload, prefetch, and preconnect](https://www.debugbear.com/blog/resource-hints-rel-preload-prefetch-preconnect) 
+>
 > [Preload, Preconnect, Prefetch: Improve Your Site's Performance with Resource Hints](https://nitropack.io/blog/post/resource-hints-performance-optimization)
 
 ```plaintext

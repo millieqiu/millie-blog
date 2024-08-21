@@ -70,8 +70,8 @@ categories: ['閒聊']
 
 附上官方的資訊：
 
-> [IG](https://www.instagram.com/vivinos__?igsh=MWwycHpjZjc2aTJuaw%3D%3D) <br>
-> [推特](https://twitter.com/official_alnst?s=21&t=GacOwyspajom3oC_273nOQ) <br>
+> [IG](https://www.instagram.com/vivinos__?igsh=MWwycHpjZjc2aTJuaw%3D%3D)   
+> [推特](https://twitter.com/official_alnst?s=21&t=GacOwyspajom3oC_273nOQ)  
 > [Bilibili](https://space.bilibili.com/1816400749?spm_id_from=333.337.search-card.all.click)
 
 順帶一提，官方 B 站的投稿圖文裡，有更多老師的小短漫＆補充設定，如果深陷在坑裡想找糧吃的話，也可以到那塊大寶地去挖挖看 XD
